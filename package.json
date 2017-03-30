@@ -1,0 +1,36 @@
+{
+  "name": "boilerplate-cj",
+  "version": "1.0.0",
+  "description": "Boilerplate for html/css/js prjects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosjunod/myboilerplate.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "html",
+    "basic",
+    "js",
+    "scss",
+    "gulp"
+  ],
+  "author": "@carlosjunod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlosjunod/myboilerplate/issues"
+  },
+  "homepage": "https://github.com/carlosjunod/myboilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-preset-es2015": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-postcss": "^6.4.0",
+    "gulp-sass": "^3.1.0"
+  }
+}
