@@ -1,9 +1,8 @@
-body{
-  background-color: #282C34;
-}
+@import "base/base";
+@import "base/reset";
+@import "utilities/mixins";
+@import "utilities/variables";
+@import "base/typography";
+@import "components/components";
 
-h1{
-  width: 100vw;
-  color: lighten(#282C34, 90);
-  padding: 20px;
-}
+@import "layout/page";

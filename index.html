@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardWars</title>
     <link rel="stylesheet" href="/css/main.css">
-  </head>
-  <body>
-    <h1>Boilerplate v1</h1>
-  </body>
-  <script src="js/app.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <main id="main-app">
+        <aside id="character-creator">
+            <h3>Create a new character</h3>
+            <form action="#">
+            <p>
+              <label for="name">name</label>
+              <input type="text" id="name" placeholder="Name">
+            </p>
+            <p>
+              <label for="race">Race</label>
+              <select name="race" id="race">
+                <option value="Warrior">Warrior</option>
+                <option value="Wizard">Wizard</option>
+              </select>
+            </p>
+            <p>
+              <label for="team">Team</label>
+              <select name="" id="team">
+                <option value="Heroes">Heroes</option>
+                <option value="Villans">Villans</option>
+              </select>
+            </p>
+            <p>
+              <label for="chant">chant</label>
+              <input type="text" id="chant" placeholder="Chant">
+            </p>
+
+            <!-- <p>
+              <label for="weapon">Weapon</label>
+              <input type="text" id="chant" placeholder="Chant">
+            </p> -->
+
+            <button type="button" name="button" id="create-character">Create</button>
+            </form>
+
+            <footer>
+              <p>made by Carlos Junod for Full Sail University</p>
+            </footer>
+        </aside>
+
+
+        <div id="battlefield">
+          <div class="team good">
+            <!-- <div class="card">
+              <ul>
+                <li class="name"><span>Name: </span></li>
+                <li class="kind"><span>Kind: </span></li>
+                <li class="weapon"><span>Avialable weapon: </span> Axe <button id='equipItem'>equip</button></li>
+                <li class="chant"><span>Chant: </span></li>
+              </ul>
+            </div> -->
+
+
+
+
+          </div>
+
+          <div class="team bad">
+            <!-- <div class="card">
+              <ul>
+                <li class="name"><span>Name: </span></li>
+                <li class="kind"><span>Kind: </span></li>
+                <li class="weapon"><span>Weapon: </span></li>
+                <li class="chant"><span>Chant: </span></li>
+              </ul>
+            </div> -->
+
+          </div>
+
+
+        </div>
+    </main>
+
+</body>
+<script src="js/utility.js" charset="utf-8"></script>
+<script src="js/app.js" charset="utf-8"></script>
+
 </html>
