@@ -15,7 +15,7 @@
         <div id="tools">
           <aside id="character-creator">
               <h3>Create a new character</h3>
-              <form action="#">
+              <form action="#" id="create">
               <p>
                 <label for="name">name</label>
                 <input type="text" id="name" placeholder="Name">
@@ -39,7 +39,7 @@
                 <input type="text" id="chant" placeholder="Chant">
               </p>
 
-              <button type="button" name="button" id="create-character">Create</button>
+              <button type="submit" name="button" form="create" id="create-character">Create</button>
               </form>
 
 
@@ -50,7 +50,7 @@
                   <input type="text" id="tournament" placeholder="tournament" value="Internet War">
                 </p>
                 <p>
-                  <button type="button" name="changeTournament" id="changeTournament">Change Tournament Name</button>
+                  <button type="submit" form="changeName" name="changeTournament" id="changeTournament">Change Tournament Name</button>
                 </p>
 
               </form>

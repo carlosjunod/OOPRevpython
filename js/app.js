@@ -78,7 +78,8 @@ Character.tournament = tournament;
 var tournamentBtn = document.querySelector('#changeTournament');
 var tournament = document.querySelector('#tournament').value;
 
-tournamentBtn.addEventListener('click', function () {
+tournamentBtn.addEventListener('click', function (e) {
+  e.preventDefault();
   tournament = document.querySelector('#tournament').value;
   Character.tournament = tournament;
   displayInfo();

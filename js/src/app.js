@@ -65,7 +65,8 @@ Character.tournament = tournament
 var tournamentBtn = document.querySelector('#changeTournament')
 var tournament = document.querySelector('#tournament').value
 
-tournamentBtn.addEventListener('click', () => {
+tournamentBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   tournament = document.querySelector('#tournament').value
   Character.tournament = tournament
   displayInfo()
