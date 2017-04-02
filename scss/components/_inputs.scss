@@ -3,6 +3,9 @@ input{
   border: none;
   border-bottom: 1px solid $light;
   background: none;
+  color: $light;
+  font-size: 1.4rem;
+
 
   &::placeholder{
     font-size: 1.4rem;
@@ -12,20 +15,29 @@ input{
 }
 
 button#create-character{
-  background-color: $good;
+  background-color: darken($good,20);
   border: 1px solid transparent;
+  color: $light;
   font-size: 1.2em;
   width: 100%;
   margin-top: 2rem;
   padding: 1.1rem;
 }
 
-button#equipItem{
+button#equipItem, button#cry{
   background-color: rgba($dark,.1);
   border: 1px solid transparent;
   display: inline-flex;
   text-align: center;
   font-size: 1em;
+}
+
+button#changeTournament{
+  @extend button#create-character;
+  background-color: $alert;
+  color: $light;
+  font-size: 1em;
+  
 }
 
 

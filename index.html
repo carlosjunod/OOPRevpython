@@ -11,44 +11,55 @@
 <body>
 
     <main id="main-app">
-        <aside id="character-creator">
-            <h3>Create a new character</h3>
-            <form action="#">
-            <p>
-              <label for="name">name</label>
-              <input type="text" id="name" placeholder="Name">
-            </p>
-            <p>
-              <label for="race">Race</label>
-              <select name="race" id="race">
-                <option value="Warrior">Warrior</option>
-                <option value="Wizard">Wizard</option>
-              </select>
-            </p>
-            <p>
-              <label for="team">Team</label>
-              <select name="" id="team">
-                <option value="Heroes">Heroes</option>
-                <option value="Villans">Villans</option>
-              </select>
-            </p>
-            <p>
-              <label for="chant">chant</label>
-              <input type="text" id="chant" placeholder="Chant">
-            </p>
 
-            <!-- <p>
-              <label for="weapon">Weapon</label>
-              <input type="text" id="chant" placeholder="Chant">
-            </p> -->
+        <div id="tools">
+          <aside id="character-creator">
+              <h3>Create a new character</h3>
+              <form action="#">
+              <p>
+                <label for="name">name</label>
+                <input type="text" id="name" placeholder="Name">
+              </p>
+              <p>
+                <label for="race">Race</label>
+                <select name="race" id="race">
+                  <option value="Warrior">Warrior</option>
+                  <option value="Wizard">Wizard</option>
+                </select>
+              </p>
+              <p>
+                <label for="team">Team</label>
+                <select name="" id="team">
+                  <option value="Heroes">Heroes</option>
+                  <option value="Villans">Villans</option>
+                </select>
+              </p>
+              <p>
+                <label for="chant">chant</label>
+                <input type="text" id="chant" placeholder="Chant">
+              </p>
 
-            <button type="button" name="button" id="create-character">Create</button>
-            </form>
+              <button type="button" name="button" id="create-character">Create</button>
+              </form>
 
-            <footer>
-              <p>made by Carlos Junod for Full Sail University</p>
-            </footer>
-        </aside>
+
+              <form action="#" id="changeName">
+                <p class="message">Change the name of the tournament: </p>
+                <p>
+                  <label for="tournament">Tournament</label>
+                  <input type="text" id="tournament" placeholder="tournament" value="Internet War">
+                </p>
+                <p>
+                  <button type="button" name="changeTournament" id="changeTournament">Change Tournament Name</button>
+                </p>
+
+              </form>
+          </aside>
+
+          <footer>
+            <p>made by Carlos Junod for Full Sail University</p>
+          </footer>
+        </div>
 
 
         <div id="battlefield">

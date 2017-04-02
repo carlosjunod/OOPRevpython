@@ -86,6 +86,8 @@ h6 {
   .card ul li {
     margin-bottom: 5px; }
     .card ul li span {
+      font-family: "Oswald", sans-serif;
+      font-size: 1.3em;
       font-weight: bolder;
       display: block;
       width: 100%; }
@@ -94,7 +96,9 @@ input {
   padding: 1.3rem;
   border: none;
   border-bottom: 1px solid #ECF0F1;
-  background: none; }
+  background: none;
+  color: #ECF0F1;
+  font-size: 1.4rem; }
   input::-webkit-input-placeholder {
     font-size: 1.4rem;
     font-style: italic;
@@ -108,20 +112,26 @@ input {
     font-style: italic;
     font-weight: lighter; }
 
-button#create-character {
-  background-color: #35CB73;
+button#create-character, button#changeTournament {
+  background-color: #207a45;
   border: 1px solid transparent;
+  color: #ECF0F1;
   font-size: 1.2em;
   width: 100%;
   margin-top: 2rem;
   padding: 1.1rem; }
 
-button#equipItem {
+button#equipItem, button#cry {
   background-color: rgba(40, 44, 52, 0.1);
   border: 1px solid transparent;
   display: -ms-inline-flexbox;
   display: inline-flex;
   text-align: center;
+  font-size: 1em; }
+
+button#changeTournament {
+  background-color: #F39C12;
+  color: #ECF0F1;
   font-size: 1em; }
 
 select {
@@ -168,7 +178,7 @@ body {
       -ms-flex-direction: row;
           flex-direction: row; } }
   #main-app #character-creator {
-    background-color: #282C34;
+    height: 90%;
     padding: 2rem;
     color: #ECF0F1; }
     #main-app #character-creator p {
@@ -180,6 +190,14 @@ body {
     #main-app #character-creator label {
       text-indent: -9999px;
       display: none; }
+  #main-app #tools {
+    min-height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
   #main-app #battlefield {
     display: -ms-flexbox;
     display: flex; }
@@ -189,7 +207,7 @@ body {
     #main-app #battlefield .team {
       background-color: blue;
       width: 50%;
-      padding: 5px;
+      padding: 2rem;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: wrap;
@@ -200,3 +218,24 @@ body {
         background: #35CB73; }
       #main-app #battlefield .team.bad {
         background: #BF3D32; }
+  #main-app #changeName {
+    border: 1px dashed #ECF0F1;
+    background-color: rgba(236, 240, 241, 0.1);
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 50px; }
+    #main-app #changeName p {
+      margin: 0px; }
+    #main-app #changeName .message {
+      background-color: rgba(236, 240, 241, 0.1);
+      font-size: .6em;
+      padding: 10px;
+      font-style: italic; }
+  #main-app footer {
+    height: 10%;
+    background-color: #282C34;
+    font-size: .7em;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    color: rgba(236, 240, 241, 0.4); }

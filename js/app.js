@@ -15,10 +15,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   addCharacter.addEventListener('click', createCharacter);
 })();
 
-var Characters = [];
+var characters = [];
 var heroesArena = document.querySelector('#battlefield .good');
 var villiansArena = document.querySelector('#battlefield .bad');
-console.log(villiansArena);
 
 // creating character
 function createCharacter(e) {
@@ -36,12 +35,14 @@ function createCharacter(e) {
     myChar = new Wizard(name, 100, 1, team, race, chant);
   }
 
-  Characters.push(myChar);
+  characters.push(myChar);
 
-  console.log(Characters);
+  console.log(characters);
 
   displayInfo();
 }
+
+// charcters classes
 
 var Character = function () {
   function Character(name, hp, exp, team, race, chant) {
@@ -62,14 +63,26 @@ var Character = function () {
       return name + ' is EQUIPPED';
     }
   }, {
-    key: 'attack',
-    value: function attack() {
-      return name + ' was USED';
+    key: 'cry',
+    value: function cry() {
+      return name + ' is Crying';
     }
   }]);
 
   return Character;
 }();
+
+var tournament = 'Internet War';
+Character.tournament = tournament;
+
+var tournamentBtn = document.querySelector('#changeTournament');
+var tournament = document.querySelector('#tournament').value;
+
+tournamentBtn.addEventListener('click', function () {
+  tournament = document.querySelector('#tournament').value;
+  Character.tournament = tournament;
+  displayInfo();
+});
 
 var Warrior = function (_Character) {
   _inherits(Warrior, _Character);
@@ -88,7 +101,14 @@ var Warrior = function (_Character) {
   _createClass(Warrior, [{
     key: 'equipItem',
     value: function equipItem() {
-      return this.weapon.name + ' is EQUIPPED';
+      console.log(this.weapon.name + ' is EQUIPPED');
+      // return `${this.weapon.name} is EQUIPPED`
+    }
+  }, {
+    key: 'cry',
+    value: function cry() {
+      console.log(this.name + ' said: I will destroy you with my ' + this.weapon.name);
+      // return `${this.name} said: I will destroy you with my ${this.weapon.name}`
     }
   }]);
 
@@ -108,8 +128,20 @@ var Wizard = function (_Character2) {
     console.log('wizard CREATED');
     return _this2;
   }
-  // TODO: OVERWRITE Functions
 
+  _createClass(Wizard, [{
+    key: 'equipItem',
+    value: function equipItem() {
+      console.log(this.magic.name + ' is being USED');
+      // return `${this.magic.name} is EQUIPPED`
+    }
+  }, {
+    key: 'cry',
+    value: function cry() {
+      console.log(this.name + ' said: I\'am the best wizard all over the Internet');
+      // return `${this.name} said: I'am the best wizard all over the Internet`
+    }
+  }]);
 
   return Wizard;
 }(Character);
@@ -122,7 +154,7 @@ var Item = function Item(name, weight) {
 
   this.name = name;
   this.weight = weight;
-  console.log('Abstract ITEM USED');
+  console.log('Abstract ITEM Created');
 };
 
 var Weapon = function (_Item) {
@@ -134,6 +166,8 @@ var Weapon = function (_Item) {
     var _this3 = _possibleConstructorReturn(this, (Weapon.__proto__ || Object.getPrototypeOf(Weapon)).call(this, name, weight));
 
     _this3.attackPower = attackPower;
+    console.log('Weapon WAS CREATED: ' + name + ' / ' + weight + ' / ' + attackPower);
+
     return _this3;
   }
 
@@ -167,23 +201,30 @@ function displayInfo() {
   villiansArena.innerHTML = '';
 
   // spliting the teams
-  Characters.forEach(function (charcter, i) {
+  characters.forEach(function (charcter, i) {
     charcter.id = i;
     var item = void 0;
     if (charcter.race == 'Warrior') {
-      item = '<li class="weapon"><span>Avialable weapon: </span> ' + charcter.weapon.name + ' </li>';
+      item = '<li class="weapon"><span>Avialable weapon</span> ' + charcter.weapon.name + ' </li>';
     } else {
-      item = '<li class="weapon"><span>Avialable weapon: </span> ' + charcter.magic.name + '</li>';
+      item = '<li class="weapon"><span>Avialable weapon</span> ' + charcter.magic.name + '</li>';
     }
 
-    var caracter = '\n      <div class="card" data-id=\'' + i + '\'>\n        <ul>\n          <li class="name"><span>Name: </span>' + charcter.name + '</li>\n          <li class="kind"><span>Kind: </span>' + charcter.race + '</li>\n          ' + item + '\n          <li><button id=\'equipItem\'>equip item</button> <button id=\'equipItem\'>War Cry</button></li>\n        </ul>\n      </div>\n      ';
+    var caracterCard = '\n      <div class="card" data-id=\'' + i + '\'>\n        <ul>\n          <li class="name"><span>Name</span>' + charcter.name + '</li>\n          <li class="kind"><span>Kind</span>' + charcter.race + '</li>\n          ' + item + '\n          <li><button id=\'equipItem\'>equip item</button> <button id=\'cry\'>War Cry</button></li>\n          <li class="tournament"><span>Tournament</span>' + Character.tournament + '</li>\n        </ul>\n      </div>\n      ';
 
     //<li class="chant"><span>Chant: </span>${charcter.chant}</li>
 
     if (charcter.team == 'Heroes') {
-      heroesArena.insertAdjacentHTML('beforeend', caracter);
+      heroesArena.insertAdjacentHTML('beforeend', caracterCard);
     } else {
-      villiansArena.insertAdjacentHTML('beforeend', caracter);
+      villiansArena.insertAdjacentHTML('beforeend', caracterCard);
     }
+
+    //adding event listeners to buttons
+    var equip = document.querySelector('[data-id="' + charcter.id + '"] #equipItem');
+    equip.addEventListener('click', charcter.equipItem.bind(charcter));
+
+    var cry = document.querySelector('[data-id="' + charcter.id + '"] #cry');
+    cry.addEventListener('click', charcter.cry.bind(charcter));
   });
 }

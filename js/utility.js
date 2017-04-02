@@ -4,8 +4,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-console.log('UTILS LOADED loaded');
-
 var Util = function () {
   function Util() {
     _classCallCheck(this, Util);
@@ -32,8 +30,6 @@ var Util = function () {
       var MagicItemName = getRandom(nameOptions.length, 0);
       var MagicItemWeight = getRandom(1, 5);
       var MagicItemDefense = getRandom(20, 1);
-
-      console.log(nameOptions[MagicItemName]);
 
       return {
         name: nameOptions[MagicItemName],

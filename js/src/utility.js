@@ -1,5 +1,3 @@
-console.log('UTILS LOADED loaded');
-
 class Util {
   constructor() {
   }
@@ -23,8 +21,6 @@ class Util {
     let MagicItemName = getRandom(nameOptions.length, 0)
     let MagicItemWeight = getRandom(1, 5)
     let MagicItemDefense = getRandom(20, 1)
-
-    console.log(nameOptions[MagicItemName]);
 
     return {
       name : nameOptions[MagicItemName],
